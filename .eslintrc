@@ -258,7 +258,7 @@
 		// 强制返回callback函数
 		"callback-return": 0,
 		// 要求 require() 出现在顶层模块作用域中
-		"global-require": 2,
+		"global-require": 0,
 		// 强制回调错误处理
 		"handle-callback-err": 0,
 		// 禁止采用new 实例化Buffer对象
