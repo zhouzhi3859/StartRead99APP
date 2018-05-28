@@ -1,7 +1,15 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
+ * Copyright(C), 2018-2019, zhouzhi073859@outlook.com, chengdu, sichuang, China.
+ * @Module home
+ * @Author zhouzhi
+ * @CreateTime 2018/5/20
+ * @Description entry file && main js
+ * @Version 0.0.1
+ * @ClassList [ SearchPage ]
+ * @FunctionList
+ * @History
+ *     <author>      <time>      <version >      <desc>
+ *     zhouzhi       2018/5/20   0.0.1           init this component
  */
 
 import React, { Component } from 'react';
@@ -30,6 +38,11 @@ const styles = StyleSheet.create({
   }
 });
 
+/**
+ * @class SearchPage
+ * @constructor
+ * @desc search page component
+ */
 export default class SearchPage extends Component {
   render() {
     return (

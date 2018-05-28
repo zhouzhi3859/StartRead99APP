@@ -1,6 +1,6 @@
 {
   "name": "StartRead99APP",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
@@ -11,7 +11,8 @@
     "react": "16.3.1",
     "react-native": "0.55.4",
     "react-native-splash-screen": "^3.0.6",
-    "react-native-tab-navigator": "^0.3.4"
+    "react-native-tab-navigator": "^0.3.4",
+    "react-native-tab-view": "0.0.78"
   },
   "devDependencies": {
     "babel-jest": "22.4.3",

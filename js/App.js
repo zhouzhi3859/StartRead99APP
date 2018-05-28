@@ -1,15 +1,22 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
+ * Copyright(C), 2018-2019, zhouzhi073859@outlook.com, chengdu, sichuang, China.
+ * @Module APP
+ * @Author zhouzhi
+ * @CreateTime 2018/5/1
+ * @Description entry file && main js
+ * @Version 0.0.2
+ * @ClassList [ App ]
+ * @FunctionList
+ *   [ componentDidMount.App, _renderTab.App ]
+ * @History
+ *     <author>      <time>      <version >      <desc>
+ *     zhouzhi       2018/5/1    0.0.1           init this component and add function [ componentDidMount.App ]
+ *     zhouzhi       2018/5/20   0.0.2           add function [ _renderTab.App ]
  */
 
 import React, { Component } from 'react';
 import {
-  Platform,
   StyleSheet,
-  Text,
-  View,
   Image
 } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
@@ -18,11 +25,6 @@ import HomePage from './page/home';
 import SearchPage from './page/search';
 import MessagePage from './page/message';
 import MinePage from './page/mine';
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n Shake or press menu button for dev menu'
-});
 
 const styles = StyleSheet.create({
   container: {
@@ -36,30 +38,56 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     margin: 10
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5
-  },
   image: {
   	height: 26,
 	  width: 26
   }
 });
 
+/**
+ * @class App
+ * @constructor
+ *   state: <object>
+ *     selectedTab: <string> which tab is selected
+ * @desc entry component
+ */
 export default class App extends Component {
   constructor(props) {
   	super(props);
   	const selectedTab = this.props.selectedTab ? this.props.selectedTab : 'tb_home';
   	this.state = {
-  		selectedTab: selectedTab
-	  };
+  	  selectedTab: selectedTab
+    };
   }
+  
+  /**
+   * @method componentDidMount
+   * @for App
+   * @params
+   * @returns void
+   * @desc hide splash screen while app component did mount
+   * @throws
+   * @example
+   */
   componentDidMount() {
   	// do stuff while splash screen is shown
-	  // After having done stuff (such as async tasks) hide the splash screen
-	  SplashScreen.hide();
+    // After having done stuff (such as async tasks) hide the splash screen
+    SplashScreen.hide();
   }
+  
+  /**
+   * @method _renderTab
+   * @for App
+   * @params
+   *   Page: <ReactComponent>
+   *   selectedTab: <string> which tab is taped
+   *   title: <string> what info show on tab
+   *   renderIcon: <string> icon of tab
+   * @returns void
+   * @desc render a tab navigator
+   * @throws
+   * @example _renderTab(MinePage, 'tb_mine', '我的', require('../assert/icon/ic_my.png'))
+   */
   _renderTab(Page, selectedTab, title, renderIcon) {
   	return (
   		<TabNavigator.Item
