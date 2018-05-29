@@ -16,10 +16,10 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  Text,
-  View
+  Text
 } from 'react-native';
-import { TabViewAnimated, TabBar, SceneMap } from 'react-native-tab-view';
+import ScrollableTabView, { ScrollableTabBar } from 'react-native-scrollable-tab-view';
+import { Button } from 'antd-mobile';
 
 const styles = StyleSheet.create({
   container: {
@@ -54,19 +54,18 @@ const styles = StyleSheet.create({
 export default class HomePage extends Component {
   render() {
   	return (
-  	  <View style={styles.container}>
-	    <Text style={styles.header}>
-	      <Text>
-	        关注
-	      </Text>
-	    </Text>
-	    <Text style={styles.welcome}>
-	      首页
-	    </Text>
-	    <Text style={styles.instructions}>
-	      这是首页
-	    </Text>
-      </View>
+      <ScrollableTabView
+        style={{marginTop: 20 }}
+        initialPage={0}
+        renderTabBar={() => {
+          return <ScrollableTabBar />;
+        }}><Button type="primary" disabled>primary disabled</Button>
+        <Text tabLabel='Tab #1'></Text>
+        <Text tabLabel='Tab #2 word word'>favorite</Text>
+        <Text tabLabel='Tab #3 word word word'>project</Text>
+        <Text tabLabel='Tab #4 word word word word'>favorite</Text>
+        <Text tabLabel='Tab #5'>project</Text>
+      </ScrollableTabView>
     );
   }
 }
