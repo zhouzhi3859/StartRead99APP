@@ -26,7 +26,7 @@ import {
 export default class SerialComponent extends Component {
 	render() {
 		return (
-			<Text>serial</Text>
+			<Text>这是连载页</Text>
 		);
 	}
 };

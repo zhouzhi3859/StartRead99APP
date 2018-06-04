@@ -26,7 +26,7 @@ import {
 export default class RecmdComponent extends Component {
 	render() {
 		return (
-			<Text>recommend1</Text>
+			<Text>这是推荐页</Text>
 		);
 	}
 };

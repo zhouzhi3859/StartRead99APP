@@ -26,7 +26,7 @@ import {
 export default class SpecialComponent extends Component {
 	render() {
 		return (
-			<Text>special</Text>
+			<Text>这是专栏页</Text>
 		);
 	}
 };

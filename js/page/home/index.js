@@ -23,7 +23,6 @@ import ScrollableTabView, { ScrollableTabBar } from 'react-native-scrollable-tab
 import  Recmd from './recmd';
 import  Serial from './serial';
 import  Special from './special';
-import { Button } from 'antd-mobile';
 
 const styles = StyleSheet.create({
 	tabBarUnderline: {
