@@ -4,13 +4,14 @@
  * @Author zhouzhi
  * @CreateTime 2018/5/20
  * @Description entry file && main js
- * @Version 0.0.2
+ * @Version 0.0.3
  * @ClassList [ HomePage ]
  * @FunctionList
  * @History
  *     <author>      <time>      <version >      <desc>
- *     zhouzhi       2018/5/20   0.0.1           init this component
+ *     zhouzhi       2018/5/20   0.0.1           init this module
  *     zhouzhi       2018/5/28   0.0.2           add tab view
+ *     zhouzhi       2018/6/4    0.0.3           add component [ recmd, serial, special ]
  */
 
 import React, { Component } from 'react';
@@ -19,12 +20,19 @@ import {
   Text
 } from 'react-native';
 import ScrollableTabView, { ScrollableTabBar } from 'react-native-scrollable-tab-view';
+import  Recmd from './recmd';
+import  Serial from './serial';
+import  Special from './special';
 import { Button } from 'antd-mobile';
 
 const styles = StyleSheet.create({
-  container: {
-  	flex: 1,
-    backgroundColor: '#F5FCFF'
+	tabBarUnderline: {
+    height: 0
+  },
+  tabBar: {
+	  width: 20,
+    backgroundColor: 'black',
+    textAlignVertical: 'center'
   },
   header: {
     backgroundColor: 'red'
@@ -49,22 +57,22 @@ const styles = StyleSheet.create({
 /**
  * @class HomePage
  * @constructor
- * @desc home page component
+ * @desc home page
  */
 export default class HomePage extends Component {
   render() {
   	return (
       <ScrollableTabView
-        style={{marginTop: 20 }}
-        initialPage={0}
+        initialPage={ 0 }
+        locked={ true }
+        tabBarUnderlineStyle={ styles.tabBarUnderline }
+        tabBarActiveTextColor='#20a0ff'
         renderTabBar={() => {
-          return <ScrollableTabBar />;
-        }}><Button type="primary" disabled>primary disabled</Button>
-        <Text tabLabel='Tab #1'></Text>
-        <Text tabLabel='Tab #2 word word'>favorite</Text>
-        <Text tabLabel='Tab #3 word word word'>project</Text>
-        <Text tabLabel='Tab #4 word word word word'>favorite</Text>
-        <Text tabLabel='Tab #5'>project</Text>
+          return <ScrollableTabBar tabStyle={{ backgroundColor: 'red', width: 70 }} style={{ flex: 0 }} />;
+        }}>
+        <Recmd tabLabel='推荐' />
+        <Serial tabLabel='连载' />
+        <Special tabLabel='专题' />
       </ScrollableTabView>
     );
   }

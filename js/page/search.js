@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
 /**
  * @class SearchPage
  * @constructor
- * @desc search page component
+ * @desc search page
  */
 export default class SearchPage extends Component {
   render() {

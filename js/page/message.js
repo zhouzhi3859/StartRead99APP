@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
 /**
  * @class MessagePage
  * @constructor
- * @desc message page component
+ * @desc message page
  */
 export default class MessagePage extends Component {
   render() {

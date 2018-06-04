@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
 /**
  * @class MinePage
  * @constructor
- * @desc mine page component
+ * @desc mine page
  */
 export default class MinePage extends Component {
   render() {
